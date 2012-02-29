@@ -1,0 +1,22 @@
+<h2>Execute a Basic SELECT Statement</h2>
+<pre><code>SELECT SHIP_ID, SHIP_NAME, CAPACITY
+FROM SHIPS
+ORDER BY SHIP_NAME;</code></pre>
+<b>Pseudocolumns</b>
+<i>Pseudocolumns</i> are values that are defined automatically by the Oracle system for every table. Pseudocolumns will not appear in the result of the DESCRIBE statement, and they are not actually stored with the table. But you can SELECT from them as though they were a typical column in the table. Pseudocolumns generally return a different value for each row in the table. 
+- ROWNUM - is the system-assigned number for a row. If you're looking for some way to number each row of output from a SELECT statement, ROWNUM might do the trick, but beware: ROWNUM is assigned before the ORDER BY clause is processed, not after.
+- ROWID - is the system-assigned physical address for a given row. This can change from time to time by the database. 
+<b>DISTINCT or UNIQUE</b>
+The reserved word DISTINCT can be used with SELECT to identify a unique set of values from a table. UNIQUE performs the same task.
+<pre><code>SELECT DISTINCT LAST_NAME, FIRST_NAME
+FROM EMPLOYEES;</code></pre>
+This query asks for all distinct combinations of values in LAST_NAME and FIRST_NAME.
+
+<h3>The Capabilities of SELECT</h3>
+<b>Projection</b> - refers to the ability of a SELECT statement to choouse a subset of the columns in a given table. 
+A query that displays a table's data by choosing a subset of a given table's columns is exhibiting the concept of projection.
+<b>Selection</b> - is the ability of a SELECT statement to choose a subset of the rows in a given table. This concept is accomplished by use of the WHERE clause of the SELECT statement. 
+A query that displays a table's data by choosing table rows selectively is exhibiting the concept of selection.
+<b>Joining</b> - is the reason there's an "R" in RDBMS. Joining is how we 'relate' data from one part of the database to another. When we 'join' two or more tables, we are specifying to the database to another. When we 'join' two or more tables, we are specifying to the database that there is common informaion shared by both tables and we want to link data from those tables together according to the common data the tables share.
+<h3>Describe How Schema Objects Work</h3>
+

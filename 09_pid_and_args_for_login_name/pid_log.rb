@@ -13,7 +13,7 @@ begin
   pwd_record = Etc.getpwnam(login_name)
 
 rescue ArgumentError
-  puts "Error: User with login \"#{login_name}\" iot found"
+  puts "Error: User with login \"#{login_name}\" not found"
   exit
 end
 
